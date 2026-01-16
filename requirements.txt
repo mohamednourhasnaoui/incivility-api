@@ -4,9 +4,3 @@ sqlmodel
 sqlalchemy[asyncio]
 geoalchemy2
 psycopg[binary]
-alembic
-pydantic-settings
-slowapi
-python-jose[cryptography]
-passlib[bcrypt]
-structlog
