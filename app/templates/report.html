@@ -1,0 +1,13 @@
+<html>
+<body>
+<h2>Nouvelle plainte</h2>
+<form method="post" action="/report">
+  Category: <input type="text" name="category"><br>
+  Description: <textarea name="description"></textarea><br>
+  <input type="hidden" name="username" value="TestUser">
+  <input type="submit" value="Soumettre">
+</form>
+<p style="color:red">{{ error }}</p>
+<a href="/reports">Voir toutes les plaintes</a>
+</body>
+</html>

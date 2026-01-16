@@ -1,0 +1,11 @@
+<html>
+<body>
+<h2>Liste des plaintes</h2>
+<ul>
+{% for r in reports %}
+  <li><b>{{ r.category }}</b> - {{ r.description }} (par {{ r.username }})</li>
+{% endfor %}
+</ul>
+<a href="/report">Nouvelle plainte</a>
+</body>
+</html>
