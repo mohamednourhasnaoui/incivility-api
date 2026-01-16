@@ -1,2 +1,11 @@
 fastapi
 uvicorn
+sqlmodel
+sqlalchemy[asyncio]
+geoalchemy2
+psycopg[binary]
+python-multipart
+pydantic-settings
+slowapi
+passlib[bcrypt]
+python-jose[cryptography]

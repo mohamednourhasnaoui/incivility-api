@@ -1,25 +1,12 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from app.routers import reports
 
-app = FastAPI(
-    title="Tunis Incivility API",
-    description="Submit and track incivility reports in Tunis",
-    version="1.0.0"
-)
+app = FastAPI(title="Incivility API")
 
-# Optional: allow all origins
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
+# Include routers
+app.include_router(reports.router, prefix="/api/v1/reports", tags=["Reports"])
 
+# Root endpoint
 @app.get("/")
-def root():
-    return {"message": "API is working!"}
-
-@app.get("/docs", include_in_schema=False)
-async def custom_swagger_ui_html():
-    from fastapi.openapi.docs import get_swagger_ui_html
-    return get_swagger_ui_html(openapi_url=app.openapi_url, title=app.title)
+async def root():
+    return {"message": "Incivility API is live!"}
